@@ -1,0 +1,18 @@
+@startuml
+!theme spacelab
+
+participant "Refine Work" as refine
+participant "Development" as code
+participant "Delivery Pipeline" as build
+participant "Production" as prod
+
+
+refine -> code
+group Development Lead time
+    code -> build
+    group Build Lead time
+        build -> prod
+    end
+end
+
+@enduml
